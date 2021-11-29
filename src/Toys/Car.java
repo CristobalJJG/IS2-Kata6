@@ -17,10 +17,10 @@ public class Car {
     }
     
     public void pack(){
-        System.out.printf("Packing '%s' %d'\n", this.type, this.serialNumber);
+        System.out.printf("Packing %s %d\n", this.type, this.serialNumber);
     }
     
     public void label(){
-        System.out.printf("Labelling '%s' %d'\n", this.type, this.serialNumber);
+        System.out.printf("Labelling %s %d\n", this.type, this.serialNumber);
     }
 }
