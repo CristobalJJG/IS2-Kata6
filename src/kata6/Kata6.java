@@ -1,7 +1,8 @@
 package kata6;
 
+import Business.AmericanToyBusiness;
 import ToyProduct.Toy;
-import Toys.ToyBusiness;
+import Business.ToyBusiness;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,7 +11,7 @@ import java.util.stream.Collectors;
 public class Kata6 {
    
     public static void main(String[] args) {
-        ToyBusiness business = new ToyBusiness();
+        ToyBusiness business = new AmericanToyBusiness();
         
         List<Toy> toys = new ArrayList<>();
        
