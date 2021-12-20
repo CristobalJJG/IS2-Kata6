@@ -16,7 +16,7 @@ public class Kata6 {
         AmericanToyFactory USAFactory = new AmericanToyFactory();
         AsianToyFactory AsianFactory = new AsianToyFactory();
         
-        ToyBusiness toyBusiness = new ToyBusiness(AsianFactory);
+        ToyBusiness toyBusiness = new ToyBusiness(USAFactory);
        
         Scanner in = new Scanner(System.in);
         String line = "";
