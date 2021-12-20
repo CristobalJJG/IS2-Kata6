@@ -32,4 +32,9 @@ public class AmericanSubmarineToy implements ToyProduct.Toy{
     public String toString() {
         return "AmericanSubmarine{" + "S/N=" + serialNumber + '}';
     }
+
+    @Override
+    public void prepare() {
+        
+    }
 }

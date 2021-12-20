@@ -1,11 +1,18 @@
 package ToyProduct.models;
 
+import ComponentFactories.RegionalComponentFactories.AmericanComponentsFactory;
+import ToyProduct.components.*;
+
 public class AmericanCarToy implements ToyProduct.Toy{
     private final int serialNumber;
     final String type = "car";
+    private Wheel[] wheels = new Wheel[4];
+    private Engine engine;
+    private final ComponentFactories.ComponentFactory factory;
    
     public AmericanCarToy(int serialNumber){
         this.serialNumber = serialNumber;
+        this.factory = new AmericanComponentsFactory();
     }
 
     @Override
@@ -30,6 +37,16 @@ public class AmericanCarToy implements ToyProduct.Toy{
     @Override
     public String toString() {
         return "AmericanCar{" + "S/N=" + serialNumber + '}';
+    }
+
+    @Override
+    public void prepare() {
+        this.engine = this.factory.createEngine();
+        System.out.print("(Motor creado)");
+        for (int i = 0; i < wheels.length; i++) { 
+            this.wheels[i] = this.factory.createWheel(); 
+        }
+        System.out.println("-(Ruedas creadas)");
     }
     
 }
