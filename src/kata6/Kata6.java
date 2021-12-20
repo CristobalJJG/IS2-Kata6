@@ -13,19 +13,21 @@ public class Kata6 {
     public static void main(String[] args) {
         List<Toy> toys = new ArrayList<>();
         
-        AmericanToyFactory USAFactory = new AmericanToyFactory();
-        AsianToyFactory AsianFactory = new AsianToyFactory();
+        ToyBusiness toyBusiness = new ToyBusiness();
         
-        ToyBusiness toyBusiness = new ToyBusiness(USAFactory);
+        toyBusiness.add("car", new AmericanCarToyFactory());
+        toyBusiness.add("helicopter", new AsianHelicopterToyFactory());
+        toyBusiness.add("submarine", new AmericanSubmarineToyFactory());
        
         Scanner in = new Scanner(System.in);
         String line = "";
         while(!line.equals("exit")){
             line = in.nextLine();
-            switch(line){
+            switch(line.toLowerCase()){
                 case "car":
+                case "submarine":
                 case "helicopter":
-                    toys.add(toyBusiness.produceToy(line));
+                    toys.add(toyBusiness.produceToy(line.toLowerCase()));
                     System.out.println(
                     "Built toys: " + toys.stream()
                            .map(c -> c.toString())
